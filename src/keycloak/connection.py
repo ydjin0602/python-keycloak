@@ -266,7 +266,7 @@ class ConnectionManager:
                 cert=self.cert,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     def raw_post(self, path: str, data: dict, **kwargs: dict) -> Response:
         """
@@ -293,7 +293,7 @@ class ConnectionManager:
                 cert=self.cert,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     def raw_put(self, path: str, data: dict, **kwargs: dict) -> Response:
         """
@@ -320,7 +320,7 @@ class ConnectionManager:
                 cert=self.cert,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     def raw_delete(self, path: str, data: dict | None = None, **kwargs: dict) -> Response:
         """
@@ -347,7 +347,7 @@ class ConnectionManager:
                 cert=self.cert,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     async def a_raw_get(self, path: str, **kwargs: dict) -> AsyncResponse:
         """
@@ -369,7 +369,7 @@ class ConnectionManager:
                 timeout=self.timeout,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     async def a_raw_post(self, path: str, data: dict, **kwargs: dict) -> AsyncResponse:
         """
@@ -395,7 +395,7 @@ class ConnectionManager:
                 timeout=self.timeout,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     async def a_raw_put(self, path: str, data: dict, **kwargs: dict) -> AsyncResponse:
         """
@@ -420,7 +420,7 @@ class ConnectionManager:
                 timeout=self.timeout,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     async def a_raw_delete(
         self,
@@ -451,7 +451,7 @@ class ConnectionManager:
                 timeout=self.timeout,
             )
         except Exception as e:
-            raise KeycloakConnectionError(str(e)) from e
+            raise KeycloakConnectionError(repr(e)) from e
 
     @staticmethod
     def _filter_query_params(query_params: dict) -> dict:
